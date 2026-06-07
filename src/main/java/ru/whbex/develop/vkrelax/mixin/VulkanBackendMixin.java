@@ -37,6 +37,6 @@ public class VulkanBackendMixin {
 
 	@Redirect(method = "isDeviceSuitable", at = @At(value = "FIELD", target = "Lcom/mojang/blaze3d/vulkan/VulkanBackend;REQUIRED_DEVICE_EXTENSIONS:Ljava/util/Set;", opcode = Opcodes.GETSTATIC))
 	private static Set<String> access(){
-		return Set.of("VK_KHR_dynamic_rendering", "VK_KHR_synchronization2", "VK_KHR_swapchain");
+		return VkRelax.EXTENSIONS;
 	}
 }
