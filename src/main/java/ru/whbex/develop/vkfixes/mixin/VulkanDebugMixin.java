@@ -1,9 +1,9 @@
-package ru.whbex.develop.vkrelax.mixin;
+package ru.whbex.develop.vkfixes.mixin;
 
 import com.mojang.blaze3d.vulkan.VulkanDebug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import ru.whbex.develop.vkrelax.VkRelax;
+import ru.whbex.develop.vkfixes.VulkanFixes;
 
 import java.util.Set;
 
@@ -16,7 +16,7 @@ public interface VulkanDebugMixin {
      */
     @Overwrite
     static VulkanDebug create(final int verbosity, final boolean wantsDebugLabels, final Set<String> availableExtensions, final Set<String> enabledExtensions){
-        VkRelax.LOGGER.info("Returning disabled Debug");
+        VulkanFixes.LOGGER.info("Returning disabled Debug");
         return new VulkanDebug.Disabled();
     }
 }

@@ -1,4 +1,4 @@
-package ru.whbex.develop.vkrelax.mixin;
+package ru.whbex.develop.vkfixes.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import org.lwjgl.vulkan.KHRSurface;

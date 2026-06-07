@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "ru.whbex.develop.vkrelax.mixin",
+	"package": "ru.whbex.develop.vkfixes.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
 		"VulkanBackendMixin",

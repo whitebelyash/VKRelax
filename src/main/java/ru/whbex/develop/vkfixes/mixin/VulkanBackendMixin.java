@@ -1,4 +1,4 @@
-package ru.whbex.develop.vkrelax.mixin;
+package ru.whbex.develop.vkfixes.mixin;
 
 import com.mojang.blaze3d.vulkan.VulkanBackend;
 import com.mojang.blaze3d.vulkan.init.VulkanFeature;
@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import ru.whbex.develop.vkrelax.VkRelax;
+import ru.whbex.develop.vkfixes.VulkanFixes;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -28,7 +28,7 @@ public class VulkanBackendMixin {
 	private static void removeFeature(CallbackInfo ci){
 		Set<VulkanFeature> newFeatures = new HashSet<>();
 		for (VulkanFeature feat : VulkanBackend.REQUIRED_DEVICE_FEATURES) {
-			if (VkRelax.FEATURES.contains(feat.name()))
+			if (VulkanFixes.FEATURES.contains(feat.name()))
 				continue;
 			newFeatures.add(feat);
 		}
@@ -37,6 +37,6 @@ public class VulkanBackendMixin {
 
 	@Redirect(method = "isDeviceSuitable", at = @At(value = "FIELD", target = "Lcom/mojang/blaze3d/vulkan/VulkanBackend;REQUIRED_DEVICE_EXTENSIONS:Ljava/util/Set;", opcode = Opcodes.GETSTATIC))
 	private static Set<String> access(){
-		return VkRelax.EXTENSIONS;
+		return VulkanFixes.EXTENSIONS;
 	}
 }

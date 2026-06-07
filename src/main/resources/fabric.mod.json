@@ -1,26 +1,26 @@
 {
 	"schemaVersion": 1,
-	"id": "vkrelax",
+	"id": "vulkanfixes",
 	"version": "${version}",
-	"name": "VkRelax",
-	"description": "Make Blaze3D Vulkan shut up about some features",
+	"name": "VulkanFixes",
+	"description": "Minecraft Vulkan backend fixes mainly targetted at Android hardware",
 	"authors": [
 		"Me!"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://whbex.ru",
+		"sources": "https://github.com/whitebelyash/VulkanFixes"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/vkrelax/icon.png",
+	"icon": "assets/vkfixes/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"ru.whbex.develop.vkrelax.VkRelax"
+			"ru.whbex.develop.vkfixes.VulkanFixes"
 		]
 	},
 	"mixins": [
-		"vkrelax.mixins.json"
+		"vulkanfixes.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.19.2",
