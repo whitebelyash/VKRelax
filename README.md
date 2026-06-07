@@ -1,7 +1,7 @@
-# VkRelax
+# VulkanFixes
 
-A tiny Minecraft mod that removes some requirements for the Vulkan backend:
-* fillModeNonSolid - used for debug features. but completely blocks support for ARM_PROPRIETARY/KosmicKrisp/PanVK. Mali does not support this feature in hardware.
+A tiny Minecraft mod that fixes some things around Minecraft Vulkan backend:
+* Removes fillModeNonSolid - used for debug features. but completely blocks support for ARM_PROPRIETARY/KosmicKrisp/PanVK. Mali does not support this feature in hardware.
 * KHR_push_descriptor - probably won't work thus will be removed soon
 
 Removing these doesn't mean MC will boot on your GPU. It just makes possible to run it on some rare configurations.
